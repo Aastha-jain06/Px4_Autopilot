@@ -1,0 +1,7 @@
+menuconfig MODULES_POSITION_CHAIN
+	bool "position_chain"
+	default n
+	---help---
+		Tamper-evident GPS hash chain using OP-TEE TrustZone.
+		Each vehicle_global_position update is hashed in secure world
+		and published as a position_hash_chain topic for logging.

@@ -55,6 +55,7 @@ px4_add_library(health_and_arming_checks
 	checks/magnetometerCheck.cpp
 	checks/manualControlCheck.cpp
 	checks/missionCheck.cpp
+	checks/missionHashCheck.cpp
 	checks/modeCheck.cpp
 	checks/navigatorCheck.cpp
 	checks/offboardCheck.cpp
@@ -71,7 +72,19 @@ px4_add_library(health_and_arming_checks
 
 	checks/externalChecks.cpp
 )
+target_link_libraries(health_and_arming_checks PRIVATE dataman_client)
 add_dependencies(health_and_arming_checks mode_util)
+
+if("${PX4_PLATFORM}" STREQUAL "posix")
+	# OP-TEE mission client — Ed25519 verification in TrustZone secure world
+	add_subdirectory(${PX4_SOURCE_DIR}/src/lib/optee_mission_client
+	                 ${CMAKE_CURRENT_BINARY_DIR}/optee_mission_client)
+	target_link_libraries(health_and_arming_checks PRIVATE optee_mission_client)
+
+	# OpenSSL — fallback when OP-TEE is not available at runtime
+	find_package(OpenSSL REQUIRED)
+	target_link_libraries(health_and_arming_checks PRIVATE OpenSSL::Crypto)
+endif()
 
 px4_add_functional_gtest(SRC HealthAndArmingChecksTest.cpp
 	LINKLIBS health_and_arming_checks mode_util

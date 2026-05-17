@@ -1,0 +1,32 @@
+{
+  "fileType": "Plan",
+  "version": 1,
+  "mission": {
+    "version": 2,
+    "firmwareType": 12,
+    "vehicleType": 2,
+    "items": [
+      {
+        "autoContinue": true,
+        "command": 16,
+        "frame": 3,
+        "params": [0, 0, 0, null, 47.398331, 8.545508, 20],
+        "type": "SimpleItem"
+      },
+      {
+        "autoContinue": true,
+        "command": 16,
+        "frame": 3,
+        "params": [0, 0, 0, null, 47.399333, 8.544815, 20],
+        "type": "SimpleItem"
+      },
+      {
+        "autoContinue": true,
+        "command": 16,
+        "frame": 3,
+        "params": [0, 0, 0, null, 47.399089, 8.543440, 30],
+        "type": "SimpleItem"
+      }
+    ]
+  }
+}
