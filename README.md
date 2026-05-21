@@ -153,13 +153,9 @@ These are two different events. We cache coordinates from the first event and ha
                   hash_waypoint(N)                ← send to OP-TEE
 ```
 
-### 2. Cache Freeze (`_seq_frozen`)
 
-After the drone reaches waypoint N, the navigator re-publishes a `nav_item` for N with a slightly adjusted altitude (loiter mode). Without the freeze, this overwrites the correct planned altitude.
 
-Fix: `mission_result` is polled **before** `nav_item` inside `Run()`. The moment `seq_reached=N` arrives, slot N is frozen. Any subsequent `nav_item` for that slot is ignored.
-
-### 3. OP-TEE Call
+### 2. OP-TEE Call
 
 ```cpp
 mission_client_chain_pos(
@@ -177,7 +173,7 @@ Inside TrustZone, the TA:
 3. Updates `g_chain.hash` (state stays in secure world)
 4. Returns new hash and sequence number to normal world
 
-### 4. On Landing
+### 3. On Landing
 
 ```
 wp_flight_chain.sha256 written to PX4_STORAGEDIR
@@ -293,31 +289,4 @@ Flight  (OP-TEE):  0844c0e190e05413...
 RESULT: MATCH — drone flew exactly the planned mission ✅
 ```
 
----
 
-## Troubleshooting
-
-| Problem | Cause | Fix |
-|---------|-------|-----|
-| `Invalid command: wp_hash_chain` | Module not in build | Check `CONFIG_MODULES_WP_HASH_CHAIN=y` in board config, rebuild |
-| `OP-TEE init failed` | TA not deployed | Rebuild and copy `.ta` file to `/usr/lib/optee_armtz/` |
-| `wp_flight_chain.sha256 not found` | Module not running during flight | Run `wp_hash_chain start` before flying |
-| `MISMATCH at byte 0` | TA struct mismatch (old TA deployed) | Rebuild TA: `make clean && make` then redeploy |
-| WP coords wrong in logs | Float32 precision display difference | Expected — `_f32()` handles this, hashes will still match |
-
----
-
-## Security Notes
-
-- **Chain state** lives in TrustZone — cannot be read or modified by normal world
-- **Coordinates** come from `navigator_mission_item` (normal world) — this is a trust boundary
-- For higher security: retrieve planned coords directly from TA via `mission_client_get_waypoint()` instead of caching from `navigator_mission_item`
-- LAND waypoints excluded from chain (PX4 adjusts altitude at runtime)
-
----
-
-## Related Docs
-
-- [Mission Hash Verification](../../docs/security/SECURE_WORLD_MISSION_VERIFICATION.md)
-- [Testing Guide](../../docs/security/TESTING_GUIDE.md)
-- [Quick Start](../../docs/security/QUICK_START.md)
