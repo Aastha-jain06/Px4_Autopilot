@@ -1,0 +1,11 @@
+menuconfig MODULES_WP_HASH_CHAIN
+	bool "wp_hash_chain"
+	default n
+	---help---
+		Waypoint hash chain using OP-TEE TrustZone.
+		Hashes planned waypoint coordinates (from navigator_mission_item)
+		each time mission_result.seq_reached advances — i.e. exactly when
+		the drone marks a waypoint as reached.
+		Results published as wp_hash_chain topic and saved to
+		wp_flight_chain.sha256 on landing for comparison with the
+		ground-station planned chain.

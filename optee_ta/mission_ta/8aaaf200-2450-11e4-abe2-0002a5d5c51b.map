@@ -1057,17 +1057,26 @@ Name             Origin             Length             Attributes
 Linker script and memory map
 
 
+<<<<<<< HEAD
 .text           0x0000000000000000    0x13d30
+=======
+.text           0x0000000000000000    0x13d20
+>>>>>>> 2e514d9d17 (PX-4)
                 0x0000000000000000                __text_start = .
  *(SORT_BY_ALIGNMENT(.text) SORT_BY_ALIGNMENT(.text.*))
  .text          0x0000000000000000       0xec /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memcpy.o)
                 0x0000000000000000                memcpy
+<<<<<<< HEAD
  .text          0x00000000000000ec      0xc6c ./ta_mission.o
+=======
+ .text          0x00000000000000ec      0xc5c ./ta_mission.o
+>>>>>>> 2e514d9d17 (PX-4)
                 0x00000000000002dc                TA_CreateEntryPoint
                 0x0000000000000328                TA_DestroyEntryPoint
                 0x000000000000034c                TA_OpenSessionEntryPoint
                 0x0000000000000384                TA_CloseSessionEntryPoint
                 0x00000000000003a8                TA_InvokeCommandEntryPoint
+<<<<<<< HEAD
  .text          0x0000000000000d58       0x1c ./user_ta_header.o
                 0x0000000000000d58                __ta_entry
                 0x0000000000000d6c                tahead_get_trace_level
@@ -1644,24 +1653,613 @@ Linker script and memory map
                 0x0000000000013cc0                consttime_memcmp
  .text          0x0000000000013d30        0x0 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
  .text          0x0000000000013d30        0x0 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(abort.o)
+=======
+ .text          0x0000000000000d48       0x1c ./user_ta_header.o
+                0x0000000000000d48                __ta_entry
+                0x0000000000000d5c                tahead_get_trace_level
+ .text          0x0000000000000d64       0x30 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(stack_check.o)
+                0x0000000000000d64                __stack_chk_fail
+ .text          0x0000000000000d94      0x340 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(trace.o)
+                0x0000000000000d94                trace_set_level
+                0x0000000000000db0                trace_get_level
+                0x0000000000000dc0                trace_vprintf
+                0x0000000000000fe4                trace_printf
+                0x00000000000010d0                dhex_dump
+ .text          0x00000000000010d4      0xe0c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintk.o)
+                0x00000000000010d4                __vsnprintf
+                0x00000000000011a0                vsnprintk
+                0x00000000000011f8                snprintk
+                0x0000000000001e94                __vsprintf
+ .text          0x0000000000001ee0       0x2c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memchr.o)
+                0x0000000000001ee0                memchr
+ .text          0x0000000000001f0c       0x1c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlen.o)
+                0x0000000000001f0c                strlen
+ .text          0x0000000000001f28      0x1e8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(trace_ext.o)
+                0x0000000000001f28                trace_ext_puts
+                0x0000000000001f50                trace_ext_get_thread_id
+                0x0000000000001f58                printf
+                0x0000000000002058                puts
+                0x0000000000002098                putchar
+ .text          0x0000000000002110     0x111c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api.o)
+                0x00000000000024bc                TEE_CloseTASession
+                0x00000000000024e4                TEE_GetCancellationFlag
+                0x000000000000254c                TEE_UnmaskCancellation
+                0x00000000000025b4                TEE_MaskCancellation
+                0x000000000000261c                TEE_CheckMemoryAccessRights
+                0x0000000000002848                TEE_OpenTASession
+                0x00000000000029a4                __GP11_TEE_OpenTASession
+                0x0000000000002af4                TEE_InvokeTACommand
+                0x0000000000002c80                __GP11_TEE_InvokeTACommand
+                0x0000000000002e00                __GP11_TEE_CheckMemoryAccessRights
+                0x0000000000002e08                TEE_SetInstanceData
+                0x0000000000002e14                TEE_GetInstanceData
+                0x0000000000002e20                TEE_MemMove
+                0x0000000000002e24                __GP11_TEE_MemMove
+                0x0000000000002e2c                TEE_MemCompare
+                0x0000000000002e30                __GP11_TEE_MemCompare
+                0x0000000000002e38                TEE_MemFill
+                0x0000000000002e3c                __GP11_TEE_MemFill
+                0x0000000000002e44                TEE_GetSystemTime
+                0x0000000000002e6c                TEE_Wait
+                0x0000000000002ea8                TEE_GetTAPersistentTime
+                0x0000000000002f20                TEE_SetTAPersistentTime
+                0x0000000000002f64                TEE_GetREETime
+                0x0000000000002f8c                TEE_Malloc
+                0x00000000000030b0                __GP11_TEE_Malloc
+                0x00000000000030b8                TEE_Free
+                0x0000000000003118                TEE_Realloc
+                0x000000000000320c                __GP11_TEE_Realloc
+                0x0000000000003214                TEE_CacheClean
+                0x000000000000321c                TEE_CacheFlush
+                0x0000000000003224                TEE_CacheInvalidate
+ .text          0x000000000000322c     0x1bc4 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_objects.o)
+                0x000000000000322c                __utee_from_attr
+                0x000000000000327c                __utee_from_gp11_attr
+                0x00000000000032cc                TEE_GetObjectInfo
+                0x0000000000003390                __GP11_TEE_GetObjectInfo
+                0x0000000000003460                TEE_GetObjectInfo1
+                0x0000000000003518                __GP11_TEE_GetObjectInfo1
+                0x00000000000035e0                TEE_RestrictObjectUsage1
+                0x0000000000003624                TEE_RestrictObjectUsage
+                0x00000000000036bc                TEE_GetObjectBufferAttribute
+                0x00000000000037c8                __GP11_TEE_GetObjectBufferAttribute
+                0x000000000000386c                TEE_GetObjectValueAttribute
+                0x00000000000039ac                TEE_CloseObject
+                0x00000000000039d4                __GP11_TEE_AllocateTransientObject
+                0x0000000000003a90                TEE_AllocateTransientObject
+                0x0000000000003aac                TEE_FreeTransientObject
+                0x0000000000003b44                TEE_ResetTransientObject
+                0x0000000000003bdc                TEE_PopulateTransientObject
+                0x0000000000003d20                __GP11_TEE_PopulateTransientObject
+                0x0000000000003e64                TEE_InitRefAttribute
+                0x0000000000003eb0                __GP11_TEE_InitRefAttribute
+                0x0000000000003f00                TEE_InitValueAttribute
+                0x0000000000003f4c                __GP11_TEE_InitValueAttribute
+                0x0000000000003f98                TEE_CopyObjectAttributes1
+                0x0000000000004098                TEE_CopyObjectAttributes
+                0x0000000000004134                TEE_GenerateKey
+                0x0000000000004240                __GP11_TEE_GenerateKey
+                0x000000000000434c                TEE_OpenPersistentObject
+                0x0000000000004438                __GP11_TEE_OpenPersistentObject
+                0x0000000000004440                TEE_CreatePersistentObject
+                0x000000000000458c                __GP11_TEE_CreatePersistentObject
+                0x0000000000004608                TEE_CloseAndDeletePersistentObject1
+                0x0000000000004650                TEE_CloseAndDeletePersistentObject
+                0x000000000000467c                TEE_RenamePersistentObject
+                0x00000000000046d8                __GP11_TEE_RenamePersistentObject
+                0x00000000000046e0                TEE_AllocatePersistentObjectEnumerator
+                0x0000000000004778                TEE_FreePersistentObjectEnumerator
+                0x00000000000047a0                TEE_ResetPersistentObjectEnumerator
+                0x00000000000047c8                TEE_StartPersistentObjectEnumerator
+                0x0000000000004818                TEE_GetNextPersistentObject
+                0x000000000000493c                __GP11_TEE_GetNextPersistentObject
+                0x0000000000004a70                TEE_ReadObjectData
+                0x0000000000004b40                __GP11_TEE_ReadObjectData
+                0x0000000000004be4                TEE_WriteObjectData
+                0x0000000000004c5c                __GP11_TEE_WriteObjectData
+                0x0000000000004c64                TEE_TruncateObjectData
+                0x0000000000004cc0                __GP11_TEE_TruncateObjectData
+                0x0000000000004cc8                TEE_SeekObjectData
+                0x0000000000004de8                __GP11_TEE_SeekObjectData
+ .text          0x0000000000004df0     0x479c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+                0x000000000000553c                TEE_FreeOperation
+                0x000000000000557c                TEE_AllocateOperation
+                0x00000000000061cc                __GP11_TEE_FreeOperation
+                0x00000000000061f8                TEE_GetOperationInfo
+                0x000000000000624c                TEE_GetOperationInfoMultiple
+                0x0000000000006404                __GP11_TEE_GetOperationInfoMultiple
+                0x0000000000006498                TEE_ResetOperation
+                0x00000000000064d4                TEE_SetOperationKey
+                0x0000000000006628                __GP11_TEE_SetOperationKey
+                0x0000000000006664                TEE_SetOperationKey2
+                0x0000000000006684                __GP11_TEE_SetOperationKey2
+                0x00000000000066d0                TEE_CopyOperation
+                0x000000000000682c                TEE_DigestUpdate
+                0x000000000000689c                __GP11_TEE_DigestUpdate
+                0x00000000000068a4                TEE_DigestDoFinal
+                0x0000000000006a18                __GP11_TEE_DigestDoFinal
+                0x0000000000006ac4                TEE_DigestExtract
+                0x0000000000006c70                TEE_CipherInit
+                0x0000000000006d50                __GP11_TEE_CipherInit
+                0x0000000000006d58                TEE_CipherUpdate
+                0x0000000000006ef4                __GP11_TEE_CipherUpdate
+                0x0000000000006fa0                TEE_CipherDoFinal
+                0x00000000000071c0                __GP11_TEE_CipherDoFinal
+                0x0000000000007278                TEE_MACInit
+                0x000000000000731c                __GP11_TEE_MACInit
+                0x0000000000007324                TEE_MACUpdate
+                0x00000000000073c4                __GP11_TEE_MACUpdate
+                0x00000000000073cc                TEE_MACComputeFinal
+                0x00000000000074e4                __GP11_TEE_MACComputeFinal
+                0x0000000000007590                TEE_MACCompareFinal
+                0x000000000000769c                __GP11_TEE_MACCompareFinal
+                0x00000000000076a8                TEE_AEInit
+                0x000000000000776c                __GP11_TEE_AEInit
+                0x000000000000777c                TEE_AEUpdateAAD
+                0x0000000000007818                __GP11_TEE_AEUpdateAAD
+                0x00000000000078ac                TEE_AEUpdate
+                0x0000000000007978                __GP11_TEE_AEUpdate
+                0x0000000000007a80                TEE_AEEncryptFinal
+                0x0000000000007c88                __GP11_TEE_AEEncryptFinal
+                0x0000000000007d68                TEE_AEDecryptFinal
+                0x0000000000007f44                __GP11_TEE_AEDecryptFinal
+                0x0000000000008008                TEE_AsymmetricEncrypt
+                0x00000000000081c8                __GP11_TEE_AsymmetricEncrypt
+                0x0000000000008370                TEE_AsymmetricDecrypt
+                0x0000000000008534                __GP11_TEE_AsymmetricDecrypt
+                0x00000000000086e0                TEE_AsymmetricSignDigest
+                0x0000000000008880                __GP11_TEE_AsymmetricSignDigest
+                0x0000000000008a20                TEE_AsymmetricVerifyDigest
+                0x0000000000008bac                __GP11_TEE_AsymmetricVerifyDigest
+                0x0000000000008d38                TEE_DeriveKey
+                0x0000000000008ee8                __GP11_TEE_DeriveKey
+                0x0000000000009098                TEE_GenerateRandom
+                0x00000000000090b8                __GP11_TEE_GenerateRandom
+                0x00000000000090c0                rand
+                0x0000000000009124                TEE_IsAlgorithmSupported
+ .text          0x000000000000958c      0x1fc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_panic.o)
+                0x00000000000095a8                TEE_Panic
+                0x00000000000095c0                __utee_check_outbuf_annotation
+                0x000000000000960c                __utee_check_gp11_outbuf_annotation
+                0x0000000000009658                __utee_check_instring_annotation
+                0x0000000000009688                __utee_check_outstring_annotation
+                0x00000000000096d4                __utee_check_gp11_outstring_annotation
+                0x0000000000009720                __utee_check_out_annotation
+                0x0000000000009740                __utee_check_attr_in_annotation
+                0x0000000000009764                __utee_check_gp11_attr_in_annotation
+                0x0000000000009768                __utee_check_inout_annotation
+ .text          0x0000000000009788      0x2d4 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+                0x000000000000980c                tee_map_zi
+                0x00000000000098a8                tee_unmap
+                0x000000000000996c                tee_invoke_supp_plugin
+ .text          0x0000000000009a5c      0x758 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+                0x0000000000009d2c                __utee_call_elf_init_fn
+                0x0000000000009e80                __utee_call_elf_fini_fn
+                0x0000000000009f24                __utee_entry
+ .text._utee_panic
+                0x000000000000a1b4        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a1b4                _utee_panic
+ .text._utee_return
+                0x000000000000a1c0        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a1c0                _utee_return
+ .text._utee_log
+                0x000000000000a1cc        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a1cc                _utee_log
+ .text.__utee_panic
+                0x000000000000a1d8        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a1d8                __utee_panic
+ .text._utee_get_property
+                0x000000000000a1e4        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a1e4                _utee_get_property
+ .text._utee_get_property_name_to_index
+                0x000000000000a1f0        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a1f0                _utee_get_property_name_to_index
+ .text._utee_open_ta_session
+                0x000000000000a1fc        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a1fc                _utee_open_ta_session
+ .text._utee_close_ta_session
+                0x000000000000a208        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a208                _utee_close_ta_session
+ .text._utee_invoke_ta_command
+                0x000000000000a214        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a214                _utee_invoke_ta_command
+ .text._utee_get_cancellation_flag
+                0x000000000000a220        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a220                _utee_get_cancellation_flag
+ .text._utee_check_access_rights
+                0x000000000000a22c        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a22c                _utee_check_access_rights
+ .text._utee_unmask_cancellation
+                0x000000000000a238        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a238                _utee_unmask_cancellation
+ .text._utee_mask_cancellation
+                0x000000000000a244        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a244                _utee_mask_cancellation
+ .text._utee_wait
+                0x000000000000a250        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a250                _utee_wait
+ .text._utee_get_time
+                0x000000000000a25c        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a25c                _utee_get_time
+ .text._utee_set_ta_time
+                0x000000000000a268        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a268                _utee_set_ta_time
+ .text._utee_cryp_state_alloc
+                0x000000000000a274        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a274                _utee_cryp_state_alloc
+ .text._utee_cryp_state_copy
+                0x000000000000a280        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a280                _utee_cryp_state_copy
+ .text._utee_cryp_state_free
+                0x000000000000a28c        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a28c                _utee_cryp_state_free
+ .text._utee_hash_init
+                0x000000000000a298        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a298                _utee_hash_init
+ .text._utee_hash_update
+                0x000000000000a2a4        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a2a4                _utee_hash_update
+ .text._utee_hash_final
+                0x000000000000a2b0        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a2b0                _utee_hash_final
+ .text._utee_cipher_init
+                0x000000000000a2bc        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a2bc                _utee_cipher_init
+ .text._utee_cipher_update
+                0x000000000000a2c8        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a2c8                _utee_cipher_update
+ .text._utee_cipher_final
+                0x000000000000a2d4        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a2d4                _utee_cipher_final
+ .text._utee_cryp_obj_get_info
+                0x000000000000a2e0        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a2e0                _utee_cryp_obj_get_info
+ .text._utee_cryp_obj_restrict_usage
+                0x000000000000a2ec        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a2ec                _utee_cryp_obj_restrict_usage
+ .text._utee_cryp_obj_get_attr
+                0x000000000000a2f8        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a2f8                _utee_cryp_obj_get_attr
+ .text._utee_cryp_obj_alloc
+                0x000000000000a304        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a304                _utee_cryp_obj_alloc
+ .text._utee_cryp_obj_close
+                0x000000000000a310        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a310                _utee_cryp_obj_close
+ .text._utee_cryp_obj_reset
+                0x000000000000a31c        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a31c                _utee_cryp_obj_reset
+ .text._utee_cryp_obj_populate
+                0x000000000000a328        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a328                _utee_cryp_obj_populate
+ .text._utee_cryp_obj_copy
+                0x000000000000a334        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a334                _utee_cryp_obj_copy
+ .text._utee_cryp_derive_key
+                0x000000000000a340        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a340                _utee_cryp_derive_key
+ .text._utee_cryp_random_number_generate
+                0x000000000000a34c        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a34c                _utee_cryp_random_number_generate
+ .text._utee_authenc_init
+                0x000000000000a358        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a358                _utee_authenc_init
+ .text._utee_authenc_update_aad
+                0x000000000000a364        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a364                _utee_authenc_update_aad
+ .text._utee_authenc_update_payload
+                0x000000000000a370        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a370                _utee_authenc_update_payload
+ .text._utee_authenc_enc_final
+                0x000000000000a37c        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a37c                _utee_authenc_enc_final
+ .text._utee_authenc_dec_final
+                0x000000000000a388        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a388                _utee_authenc_dec_final
+ .text._utee_asymm_operate
+                0x000000000000a394        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a394                _utee_asymm_operate
+ .text._utee_asymm_verify
+                0x000000000000a3a0        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a3a0                _utee_asymm_verify
+ .text._utee_storage_obj_open
+                0x000000000000a3ac        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a3ac                _utee_storage_obj_open
+ .text._utee_storage_obj_create
+                0x000000000000a3b8        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a3b8                _utee_storage_obj_create
+ .text._utee_storage_obj_del
+                0x000000000000a3c4        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a3c4                _utee_storage_obj_del
+ .text._utee_storage_obj_rename
+                0x000000000000a3d0        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a3d0                _utee_storage_obj_rename
+ .text._utee_storage_alloc_enum
+                0x000000000000a3dc        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a3dc                _utee_storage_alloc_enum
+ .text._utee_storage_free_enum
+                0x000000000000a3e8        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a3e8                _utee_storage_free_enum
+ .text._utee_storage_reset_enum
+                0x000000000000a3f4        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a3f4                _utee_storage_reset_enum
+ .text._utee_storage_start_enum
+                0x000000000000a400        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a400                _utee_storage_start_enum
+ .text._utee_storage_next_enum
+                0x000000000000a40c        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a40c                _utee_storage_next_enum
+ .text._utee_storage_obj_read
+                0x000000000000a418        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a418                _utee_storage_obj_read
+ .text._utee_storage_obj_write
+                0x000000000000a424        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a424                _utee_storage_obj_write
+ .text._utee_storage_obj_trunc
+                0x000000000000a430        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a430                _utee_storage_obj_trunc
+ .text._utee_storage_obj_seek
+                0x000000000000a43c        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a43c                _utee_storage_obj_seek
+ .text._utee_cryp_obj_generate_key
+                0x000000000000a448        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a448                _utee_cryp_obj_generate_key
+ .text._utee_cache_operation
+                0x000000000000a454        0xc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+                0x000000000000a454                _utee_cache_operation
+ .text.unlikely
+                0x000000000000a460       0x20 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(abort.o)
+                0x000000000000a460                abort
+ .text          0x000000000000a480       0x58 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(assert.o)
+                0x000000000000a480                _assert_log
+                0x000000000000a4c4                _assert_break
+ .text          0x000000000000a4d8     0x2228 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+                0x000000000000ad4c                _TEE_MathAPI_Init
+                0x000000000000ad9c                TEE_BigIntInit
+                0x000000000000adfc                __GP11_TEE_BigIntInit
+                0x000000000000ae04                TEE_BigIntConvertFromOctetString
+                0x000000000000aed4                __GP11_TEE_BigIntConvertFromOctetString
+                0x000000000000aedc                TEE_BigIntConvertToOctetString
+                0x000000000000afac                __GP11_TEE_BigIntConvertToOctetString
+                0x000000000000b018                TEE_BigIntConvertFromS32
+                0x000000000000b0d4                TEE_BigIntConvertToS32
+                0x000000000000b194                TEE_BigIntCmp
+                0x000000000000b234                TEE_BigIntCmpS32
+                0x000000000000b494                TEE_BigIntShiftRight
+                0x000000000000b63c                __GP11_TEE_BigIntShiftRight
+                0x000000000000b644                TEE_BigIntGetBit
+                0x000000000000b6d0                TEE_BigIntGetBitCount
+                0x000000000000b750                TEE_BigIntSetBit
+                0x000000000000b808                TEE_BigIntAssign
+                0x000000000000b858                TEE_BigIntAbs
+                0x000000000000b884                TEE_BigIntAdd
+                0x000000000000b890                TEE_BigIntSub
+                0x000000000000b89c                TEE_BigIntNeg
+                0x000000000000b988                TEE_BigIntMul
+                0x000000000000baa4                TEE_BigIntSquare
+                0x000000000000baac                TEE_BigIntDiv
+                0x000000000000bc68                TEE_BigIntMod
+                0x000000000000bcd4                TEE_BigIntAddMod
+                0x000000000000bce0                TEE_BigIntSubMod
+                0x000000000000bcec                TEE_BigIntMulMod
+                0x000000000000bcf8                TEE_BigIntSquareMod
+                0x000000000000bd04                TEE_BigIntInvMod
+                0x000000000000be5c                TEE_BigIntRelativePrime
+                0x000000000000bf6c                TEE_BigIntExpMod
+                0x000000000000c14c                TEE_BigIntComputeExtendedGcd
+                0x000000000000c3c4                TEE_BigIntIsProbablePrime
+                0x000000000000c464                TEE_BigIntInitFMM
+                0x000000000000c468                __GP11_TEE_BigIntInitFMM
+                0x000000000000c470                TEE_BigIntInitFMMContext
+                0x000000000000c474                __GP11_TEE_BigIntInitFMMContext
+                0x000000000000c47c                TEE_BigIntInitFMMContext1
+                0x000000000000c484                TEE_BigIntFMMSizeInU32
+                0x000000000000c494                __GP11_TEE_BigIntFMMSizeInU32
+                0x000000000000c4ac                TEE_BigIntFMMContextSizeInU32
+                0x000000000000c4b4                __GP11_TEE_BigIntFMMContextSizeInU32
+                0x000000000000c4cc                TEE_BigIntConvertToFMM
+                0x000000000000c4d0                TEE_BigIntConvertFromFMM
+                0x000000000000c5ac                TEE_BigIntComputeFMM
+ .text          0x000000000000c700     0x1044 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+                0x000000000000cae4                TEE_GetPropertyAsString
+                0x000000000000cd50                __GP11_TEE_GetPropertyAsString
+                0x000000000000cdf4                TEE_GetPropertyAsBool
+                0x000000000000ced4                TEE_GetPropertyAsU32
+                0x000000000000cfc4                TEE_GetPropertyAsU64
+                0x000000000000d0b4                __GP11_TEE_GetPropertyAsBinaryBlock
+                0x000000000000d1a4                TEE_GetPropertyAsBinaryBlock
+                0x000000000000d248                TEE_GetPropertyAsUUID
+                0x000000000000d338                TEE_GetPropertyAsIdentity
+                0x000000000000d428                TEE_ResetPropertyEnumerator
+                0x000000000000d434                TEE_AllocatePropertyEnumerator
+                0x000000000000d47c                TEE_FreePropertyEnumerator
+                0x000000000000d480                TEE_StartPropertyEnumerator
+                0x000000000000d490                __GP11_TEE_GetPropertyName
+                0x000000000000d5c8                TEE_GetPropertyName
+                0x000000000000d65c                TEE_GetNextProperty
+ .text          0x000000000000d744      0x34c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tcb.o)
+                0x000000000000d744                __utee_tcb_init
+                0x000000000000d984                __tls_get_addr
+                0x000000000000d9a0                dl_iterate_phdr
+ .text          0x000000000000da90      0x250 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(base64.o)
+                0x000000000000da90                _base64_enc_len
+                0x000000000000daa8                _base64_enc
+                0x000000000000dbbc                _base64_dec
+ .text          0x000000000000dce0     0x372c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+                0x000000000000de48                mbedtls_mpi_init
+                0x000000000000de5c                mbedtls_mpi_init_mempool
+                0x000000000000de84                mbedtls_mpi_free
+                0x000000000000def0                mbedtls_mpi_grow
+                0x000000000000e044                mbedtls_mpi_shrink
+                0x000000000000e15c                mbedtls_mpi_copy
+                0x000000000000e228                mbedtls_mpi_swap
+                0x000000000000e2bc                mbedtls_mpi_lset
+                0x000000000000e324                mbedtls_mpi_get_bit
+                0x000000000000e350                mbedtls_mpi_set_bit
+                0x000000000000e3dc                mbedtls_mpi_lsb
+                0x000000000000e430                mbedtls_mpi_bitlen
+                0x000000000000e438                mbedtls_mpi_size
+                0x000000000000e454                mbedtls_mpi_read_binary_le
+                0x000000000000e4b0                mbedtls_mpi_read_binary
+                0x000000000000e50c                mbedtls_mpi_write_binary_le
+                0x000000000000e51c                mbedtls_mpi_write_binary
+                0x000000000000e52c                mbedtls_mpi_shift_l
+                0x000000000000e63c                mbedtls_mpi_shift_r
+                0x000000000000e66c                mbedtls_mpi_cmp_abs
+                0x000000000000e708                mbedtls_mpi_cmp_mpi
+                0x000000000000e7d8                mbedtls_mpi_cmp_int
+                0x000000000000e858                mbedtls_mpi_add_abs
+                0x000000000000e950                mbedtls_mpi_sub_abs
+                0x000000000000eb08                mbedtls_mpi_add_mpi
+                0x000000000000eb10                mbedtls_mpi_sub_mpi
+                0x000000000000eb18                mbedtls_mpi_add_int
+                0x000000000000eb98                mbedtls_mpi_sub_int
+                0x000000000000ec18                mbedtls_mpi_mul_mpi
+                0x000000000000eddc                mbedtls_mpi_mul_int
+                0x000000000000ee90                mbedtls_mpi_read_string
+                0x000000000000f0a4                mbedtls_mpi_div_mpi
+                0x000000000000f5cc                mbedtls_mpi_div_int
+                0x000000000000f64c                mbedtls_mpi_mod_mpi
+                0x000000000000f700                mbedtls_mpi_mod_int
+                0x000000000000f79c                mbedtls_mpi_write_string
+                0x000000000000fae4                mbedtls_mpi_montg_init
+                0x000000000000fb0c                mbedtls_mpi_montmul
+                0x000000000000fb18                mbedtls_mpi_montred
+                0x000000000000fb1c                mbedtls_mpi_exp_mod
+                0x00000000000101bc                mbedtls_mpi_gcd
+                0x000000000001039c                mbedtls_mpi_fill_random
+                0x00000000000106b0                mbedtls_mpi_random
+                0x0000000000010744                mbedtls_mpi_inv_mod
+                0x0000000000010ba4                mbedtls_mpi_is_prime_ext
+                0x0000000000010c90                mbedtls_mpi_gen_prime
+                0x0000000000010fe4                mbedtls_mpi_self_test
+ .text          0x000000000001140c      0xe78 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum_core.o)
+                0x000000000001140c                mbedtls_mpi_core_clz
+                0x0000000000011434                mbedtls_mpi_core_bitlen
+                0x0000000000011488                mbedtls_mpi_core_bigendian_to_host
+                0x00000000000114bc                mbedtls_mpi_core_uint_le_mpi
+                0x0000000000011520                mbedtls_mpi_core_cond_assign
+                0x0000000000011544                mbedtls_mpi_core_cond_swap
+                0x00000000000115c0                mbedtls_mpi_core_read_le
+                0x000000000001164c                mbedtls_mpi_core_read_be
+                0x00000000000116dc                mbedtls_mpi_core_write_le
+                0x0000000000011788                mbedtls_mpi_core_write_be
+                0x0000000000011840                mbedtls_mpi_core_shift_r
+                0x000000000001191c                mbedtls_mpi_core_add
+                0x0000000000011958                mbedtls_mpi_core_add_if
+                0x00000000000119c8                mbedtls_mpi_core_sub
+                0x0000000000011a0c                mbedtls_mpi_core_mla
+                0x0000000000011bd8                mbedtls_mpi_core_montmul_init
+                0x0000000000011c0c                mbedtls_mpi_core_montmul
+                0x0000000000011d04                mbedtls_mpi_core_get_mont_r2_unsafe
+                0x0000000000011d6c                mbedtls_mpi_core_fill_random
+                0x0000000000011e1c                mbedtls_mpi_core_random
+                0x0000000000011f14                mbedtls_mpi_core_exp_mod_working_limbs
+                0x0000000000011f3c                mbedtls_mpi_core_exp_mod
+                0x000000000001219c                mbedtls_mpi_core_sub_int
+                0x00000000000121cc                mbedtls_mpi_core_check_zero_ct
+                0x00000000000121f4                mbedtls_mpi_core_to_mont_rep
+                0x0000000000012210                mbedtls_mpi_core_from_mont_rep
+ .text          0x0000000000012284      0x774 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(constant_time.o)
+                0x00000000000122a4                mbedtls_ct_memcmp
+                0x00000000000122d8                mbedtls_ct_uint_mask
+                0x00000000000122e8                mbedtls_ct_mpi_uint_mask
+                0x00000000000122f8                mbedtls_ct_size_bool_eq
+                0x0000000000012310                mbedtls_ct_mpi_uint_lt
+                0x000000000001232c                mbedtls_ct_uint_if
+                0x000000000001235c                mbedtls_ct_mpi_uint_cond_assign
+                0x0000000000012398                mbedtls_ct_base64_enc_char
+                0x000000000001244c                mbedtls_ct_base64_dec_value
+                0x0000000000012508                mbedtls_mpi_safe_cond_assign
+                0x00000000000125c4                mbedtls_mpi_safe_cond_swap
+                0x000000000001267c                mbedtls_mpi_core_lt_ct
+                0x00000000000126fc                mbedtls_mpi_lt_mpi_ct
+                0x00000000000127f4                mbedtls_ct_rsaes_pkcs1_v15_unpadding
+ .text          0x00000000000129f8      0x234 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
+                0x00000000000129f8                mbedtls_get_unaligned_uint16
+                0x0000000000012a54                mbedtls_put_unaligned_uint16
+                0x0000000000012a6c                mbedtls_get_unaligned_uint32
+                0x0000000000012ad0                mbedtls_put_unaligned_uint32
+                0x0000000000012af0                mbedtls_get_unaligned_uint64
+                0x0000000000012b54                mbedtls_put_unaligned_uint64
+                0x0000000000012b74                mbedtls_xor
+                0x0000000000012c0c                mbedtls_platform_zeroize
+ .text          0x0000000000012c2c      0xce4 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+                0x0000000000012c64                bget
+                0x0000000000012f28                bgetz
+                0x0000000000012fb0                brel
+                0x0000000000013234                bgetr
+                0x0000000000013304                bpool
+                0x00000000000133d4                raw_memalign
+                0x0000000000013428                raw_malloc
+                0x0000000000013438                raw_free
+                0x0000000000013448                raw_calloc
+                0x0000000000013498                raw_realloc
+                0x0000000000013580                malloc
+                0x0000000000013598                calloc
+                0x00000000000135b4                realloc
+                0x00000000000135cc                memalign
+                0x00000000000135e8                aligned_alloc
+                0x0000000000013600                free
+                0x0000000000013610                free_wipe
+                0x0000000000013620                raw_malloc_get_ctx_size
+                0x0000000000013628                raw_malloc_init_ctx
+                0x000000000001363c                raw_malloc_add_pool
+                0x0000000000013704                raw_malloc_buffer_overlaps_heap
+                0x0000000000013784                raw_malloc_buffer_is_within_alloced
+                0x00000000000138d4                malloc_add_pool
+                0x00000000000138e8                malloc_buffer_is_within_alloced
+                0x00000000000138fc                malloc_buffer_overlaps_heap
+ .text          0x0000000000013910      0x134 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintf.o)
+                0x0000000000013910                snprintf
+                0x00000000000139ec                vsnprintf
+ .text          0x0000000000013a44       0x5c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memmove.o)
+                0x0000000000013a44                memmove
+ .text          0x0000000000013aa0       0x1c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memset.o)
+                0x0000000000013aa0                memset
+ .text          0x0000000000013abc       0x24 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strcmp.o)
+                0x0000000000013abc                strcmp
+ .text          0x0000000000013ae0       0x38 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlcpy.o)
+                0x0000000000013ae0                strlcpy
+ .text          0x0000000000013b18      0x198 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
+                0x0000000000013b18                mempool_alloc_pool
+                0x0000000000013be0                mempool_alloc
+                0x0000000000013c44                mempool_calloc
+                0x0000000000013c94                mempool_free
+ .text          0x0000000000013cb0       0x70 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+                0x0000000000013cb0                consttime_memcmp
+ .text          0x0000000000013d20        0x0 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+ .text          0x0000000000013d20        0x0 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(abort.o)
+>>>>>>> 2e514d9d17 (PX-4)
  *(SORT_BY_ALIGNMENT(.stub))
  *(SORT_BY_ALIGNMENT(.glue_7))
  *(SORT_BY_ALIGNMENT(.glue_7t))
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.t.*))
  *(SORT_BY_ALIGNMENT(.vfp11_veneer))
+<<<<<<< HEAD
                 0x0000000000013d30                __text_end = .
+=======
+                0x0000000000013d20                __text_end = .
+>>>>>>> 2e514d9d17 (PX-4)
 
 .note.gnu.property
  *(SORT_BY_ALIGNMENT(.note.gnu.property))
 
+<<<<<<< HEAD
 .plt            0x0000000000013d30        0x0
  *(SORT_BY_ALIGNMENT(.plt))
  .plt           0x0000000000013d30        0x0 ./ta_mission.o
+=======
+.plt            0x0000000000013d20        0x0
+ *(SORT_BY_ALIGNMENT(.plt))
+ .plt           0x0000000000013d20        0x0 ./ta_mission.o
+>>>>>>> 2e514d9d17 (PX-4)
 
 .eh_frame_hdr
  *(SORT_BY_ALIGNMENT(.eh_frame_hdr))
  *(SORT_BY_ALIGNMENT(.eh_frame_entry) SORT_BY_ALIGNMENT(.eh_frame_entry.*))
 
+<<<<<<< HEAD
 .eh_frame       0x0000000000013d30     0x3fec
  *(SORT_BY_ALIGNMENT(.eh_frame))
  .eh_frame      0x0000000000013d30      0x108 ./ta_mission.o
@@ -1728,12 +2326,81 @@ Linker script and memory map
  .eh_frame      0x0000000000017c78       0x88 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
                                          0xa0 (size before relaxing)
  .eh_frame      0x0000000000017d00       0x1c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+=======
+.eh_frame       0x0000000000013d20     0x3fec
+ *(SORT_BY_ALIGNMENT(.eh_frame))
+ .eh_frame      0x0000000000013d20      0x108 ./ta_mission.o
+ .eh_frame      0x0000000000013e28       0x30 ./user_ta_header.o
+                                         0x40 (size before relaxing)
+ .eh_frame      0x0000000000013e58       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(stack_check.o)
+                                         0x30 (size before relaxing)
+ .eh_frame      0x0000000000013e70       0xb8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(trace.o)
+                                         0xc8 (size before relaxing)
+ .eh_frame      0x0000000000013f28       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memcpy.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000000013f40       0xf0 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintk.o)
+                                        0x108 (size before relaxing)
+ .eh_frame      0x0000000000014030       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memchr.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000000014048       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlen.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000000014060       0xa8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(trace_ext.o)
+                                         0xc0 (size before relaxing)
+ .eh_frame      0x0000000000014108      0x590 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api.o)
+                                        0x5a8 (size before relaxing)
+ .eh_frame      0x0000000000014698      0x778 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_objects.o)
+                                        0x788 (size before relaxing)
+ .eh_frame      0x0000000000014e10      0xb00 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+                                        0xb18 (size before relaxing)
+ .eh_frame      0x0000000000015910      0x178 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_panic.o)
+                                        0x188 (size before relaxing)
+ .eh_frame      0x0000000000015a88       0xb0 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+                                         0xc0 (size before relaxing)
+ .eh_frame      0x0000000000015b38      0x150 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+                                        0x168 (size before relaxing)
+ .eh_frame      0x0000000000015c88       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(abort.o)
+                                         0x30 (size before relaxing)
+ .eh_frame      0x0000000000015ca0       0x38 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(assert.o)
+                                         0x50 (size before relaxing)
+ .eh_frame      0x0000000000015cd8      0x7f8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+                                        0x810 (size before relaxing)
+ .eh_frame      0x00000000000164d0      0x328 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+                                        0x340 (size before relaxing)
+ .eh_frame      0x00000000000167f8       0x90 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tcb.o)
+                                         0xa0 (size before relaxing)
+ .eh_frame      0x0000000000016888       0x58 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(base64.o)
+                                         0x70 (size before relaxing)
+ .eh_frame      0x00000000000168e0      0x918 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+                                        0x930 (size before relaxing)
+ .eh_frame      0x00000000000171f8      0x3c8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum_core.o)
+                                        0x3e0 (size before relaxing)
+ .eh_frame      0x00000000000175c0      0x218 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(constant_time.o)
+                                        0x228 (size before relaxing)
+ .eh_frame      0x00000000000177d8      0x110 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
+                                        0x128 (size before relaxing)
+ .eh_frame      0x00000000000178e8      0x2c8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+                                        0x2d8 (size before relaxing)
+ .eh_frame      0x0000000000017bb0       0x58 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintf.o)
+                                         0x70 (size before relaxing)
+ .eh_frame      0x0000000000017c08       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memmove.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000000017c20       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memset.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000000017c38       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strcmp.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000000017c50       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlcpy.o)
+                                         0x28 (size before relaxing)
+ .eh_frame      0x0000000000017c68       0x88 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
+                                         0xa0 (size before relaxing)
+ .eh_frame      0x0000000000017cf0       0x1c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+>>>>>>> 2e514d9d17 (PX-4)
                                          0x30 (size before relaxing)
  *(SORT_BY_ALIGNMENT(.eh_frame.*))
 
 .gcc_except_table
  *(SORT_BY_ALIGNMENT(.gcc_except_table) SORT_BY_ALIGNMENT(.gcc_except_table.*))
 
+<<<<<<< HEAD
 .rodata         0x0000000000017d20     0x18c8
  *(SORT_BY_ALIGNMENT(.gnu.linkonce.r.*))
  *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*))
@@ -1835,6 +2502,109 @@ Linker script and memory map
 .ta_head        0x0000000000019620       0x20
  .ta_head       0x0000000000019620       0x20 ./user_ta_header.o
                 0x0000000000019620                ta_head
+=======
+.rodata         0x0000000000017d10     0x18c8
+ *(SORT_BY_ALIGNMENT(.gnu.linkonce.r.*))
+ *(SORT_BY_ALIGNMENT(.rodata) SORT_BY_ALIGNMENT(.rodata.*))
+ .rodata.user_ta_header.c
+                0x0000000000017d10       0x33 ./user_ta_header.o
+                0x0000000000017d10                ta_num_props
+                0x0000000000017d30                __ta_no_share_heap_size
+                0x0000000000017d38                ta_heap_size
+                0x0000000000017d40                trace_ext_prefix
+ *fill*         0x0000000000017d43        0x5 
+ .rodata.lib/libutee/tee_api.c
+                0x0000000000017d48       0x20 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api.o)
+ .rodata.ta_mission.c
+                0x0000000000017d68      0x15f ./ta_mission.o
+                0x0000000000017ea7                ta_mission_pubkey
+ *fill*         0x0000000000017ec7        0x1 
+ .rodata.lib/libutils/ext/snprintk.c
+                0x0000000000017ec8       0xac /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintk.o)
+ .rodata.lib/libutee/tee_api_operations.c
+                0x0000000000017f74       0x20 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+ .rodata.lib/libutee/tee_system_pta.c
+                0x0000000000017f94       0x31 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+ *fill*         0x0000000000017fc5        0x3 
+ .rodata.lib/libutee/tee_api_property.c
+                0x0000000000017fc8       0x20 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+ .rodata.lib/libutee/base64.c
+                0x0000000000017fe8       0x45 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(base64.o)
+ *fill*         0x000000000001802d        0x3 
+ .rodata.lib/libmbedtls/mbedtls/library/bignum.c
+                0x0000000000018030      0x2c4 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+ .rodata.str1.1.ta_mission.c
+                0x00000000000182f4      0x4f4 ./ta_mission.o
+ .rodata.str1.1.user_ta_header.c
+                0x00000000000187e8      0x11d ./user_ta_header.o
+ .rodata.str1.1.lib/libutils/isoc/stack_check.c
+                0x0000000000018905       0x18 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(stack_check.o)
+ .rodata.str1.1.lib/libutils/ext/trace.c
+                0x000000000001891d       0x1a /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(trace.o)
+                                         0x1b (size before relaxing)
+ .rodata.lib/libutils/ext/trace.c
+                0x0000000000018937        0x5 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(trace.o)
+ .rodata.str1.1.lib/libutils/ext/snprintk.c
+                0x000000000001893c       0x38 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintk.o)
+ .rodata.str1.1.lib/libutee/trace_ext.c
+                0x0000000000018974       0x38 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(trace_ext.o)
+                                          0x2 (size before relaxing)
+ .rodata.str1.1.lib/libutee/tee_api.c
+                0x0000000000018974       0x11 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api.o)
+ .rodata.str1.1.lib/libutee/tee_api_operations.c
+                0x0000000000018985       0x39 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+ .rodata.str1.1.lib/libutee/tee_system_pta.c
+                0x00000000000189be       0x55 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+ .rodata.str1.1.lib/libutee/user_ta_entry.c
+                0x0000000000018a13       0x4f /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+ .rodata.lib/libutee/user_ta_entry.c
+                0x0000000000018a62       0x16 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+ .rodata.str1.1.lib/libutee/abort.c
+                0x0000000000018a78        0x7 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(abort.o)
+ .rodata.str1.1.lib/libutee/assert.c
+                0x0000000000018a7f       0x27 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(assert.o)
+ .rodata.str1.1.lib/libutee/tee_api_arith_mpi.c
+                0x0000000000018aa6       0xc9 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+ .rodata.lib/libutee/tee_api_arith_mpi.c
+                0x0000000000018b6f      0x14e /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+ .rodata.str1.1.lib/libutee/tee_api_property.c
+                0x0000000000018cbd       0x80 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+                                         0x88 (size before relaxing)
+ .rodata.str1.1.lib/libutee/tcb.c
+                0x0000000000018d3d       0x8d /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tcb.o)
+ .rodata.lib/libutee/tcb.c
+                0x0000000000018dca       0x20 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tcb.o)
+ .rodata.str1.1.lib/libmbedtls/mbedtls/library/bignum.c
+                0x0000000000018dea      0x456 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+                                        0x45d (size before relaxing)
+ .rodata.str1.1.lib/libutils/isoc/bget_malloc.c
+                0x0000000000019240      0x292 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+                                        0x29b (size before relaxing)
+ .rodata.lib/libutils/isoc/bget_malloc.c
+                0x00000000000194d2       0x51 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+ .rodata.str1.1.lib/libutils/ext/mempool.c
+                0x0000000000019523       0x89 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
+ .rodata.lib/libutils/ext/mempool.c
+                0x00000000000195ac       0x2c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
+
+.gnu.version_d  0x00000000000195d8        0x0
+ .gnu.version_d
+                0x00000000000195d8        0x0 ./ta_mission.o
+
+.gnu.version    0x00000000000195d8        0x0
+ .gnu.version   0x00000000000195d8        0x0 ./ta_mission.o
+
+.gnu.version_r  0x00000000000195d8        0x0
+ .gnu.version_r
+                0x00000000000195d8        0x0 ./ta_mission.o
+
+.gnu.hash       0x00000000000195d8       0x34
+ .gnu.hash      0x00000000000195d8       0x34 ./ta_mission.o
+
+.ta_head        0x0000000000019610       0x20
+ .ta_head       0x0000000000019610       0x20 ./user_ta_header.o
+                0x0000000000019610                ta_head
+>>>>>>> 2e514d9d17 (PX-4)
 
 .ARM.extab
  *(SORT_BY_ALIGNMENT(.ARM.extab*) SORT_BY_ALIGNMENT(.gnu.linkonce.armextab.*))
@@ -1850,6 +2620,7 @@ Linker script and memory map
 .dtors
  *(SORT_BY_ALIGNMENT(.dtors))
 
+<<<<<<< HEAD
 .dynsym         0x0000000000019640       0xa8
  *(SORT_BY_ALIGNMENT(.dynsym))
  .dynsym        0x0000000000019640       0xa8 ./ta_mission.o
@@ -1872,6 +2643,30 @@ Linker script and memory map
                 0x0000000000019a08       0x60 ./ta_mission.o
  .rela.data.rel
                 0x0000000000019a68       0x18 ./ta_mission.o
+=======
+.dynsym         0x0000000000019630       0xa8
+ *(SORT_BY_ALIGNMENT(.dynsym))
+ .dynsym        0x0000000000019630       0xa8 ./ta_mission.o
+
+.dynstr         0x00000000000196d8       0x36
+ *(SORT_BY_ALIGNMENT(.dynstr))
+ .dynstr        0x00000000000196d8       0x36 ./ta_mission.o
+
+.hash           0x0000000000019710       0x30
+ *(SORT_BY_ALIGNMENT(.hash))
+ .hash          0x0000000000019710       0x30 ./ta_mission.o
+
+.rela.dyn       0x0000000000019740      0x330
+ .rela.data.rel.ro
+                0x0000000000019740        0x0 ./ta_mission.o
+ .rela.ifunc    0x0000000000019740        0x0 ./ta_mission.o
+ .rela.data.rel.ro.local
+                0x0000000000019740      0x2b8 ./ta_mission.o
+ .rela.data.rel.local
+                0x00000000000199f8       0x60 ./ta_mission.o
+ .rela.data.rel
+                0x0000000000019a58       0x18 ./ta_mission.o
+>>>>>>> 2e514d9d17 (PX-4)
                 0x000000000001a000                . = ALIGN (0x1000)
 
 .dynamic        0x000000000001a000      0x110
@@ -2096,6 +2891,7 @@ LOAD /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/expor
 OUTPUT(8aaaf200-2450-11e4-abe2-0002a5d5c51b.elf elf64-littleaarch64)
 LOAD linker stubs
 
+<<<<<<< HEAD
 .debug_info     0x0000000000000000    0x24b7b
  .debug_info    0x0000000000000000     0x1cb6 ./ta_mission.o
  .debug_info    0x0000000000001cb6      0x4e8 ./user_ta_header.o
@@ -2131,6 +2927,43 @@ LOAD linker stubs
  .debug_info    0x00000000000241f3      0x123 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlcpy.o)
  .debug_info    0x0000000000024316      0x733 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
  .debug_info    0x0000000000024a49      0x132 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+=======
+.debug_info     0x0000000000000000    0x24b4a
+ .debug_info    0x0000000000000000     0x1c85 ./ta_mission.o
+ .debug_info    0x0000000000001c85      0x4e8 ./user_ta_header.o
+ .debug_info    0x000000000000216d      0x144 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(stack_check.o)
+ .debug_info    0x00000000000022b1      0x70f /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(trace.o)
+ .debug_info    0x00000000000029c0      0x130 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memcpy.o)
+ .debug_info    0x0000000000002af0      0x963 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintk.o)
+ .debug_info    0x0000000000003453       0xff /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memchr.o)
+ .debug_info    0x0000000000003552       0xbf /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlen.o)
+ .debug_info    0x0000000000003611      0x3d7 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(trace_ext.o)
+ .debug_info    0x00000000000039e8     0x275a /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api.o)
+ .debug_info    0x0000000000006142     0x2efc /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_objects.o)
+ .debug_info    0x000000000000903e     0x5720 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+ .debug_info    0x000000000000e75e      0xa4c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_panic.o)
+ .debug_info    0x000000000000f1aa      0x7fa /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+ .debug_info    0x000000000000f9a4     0x16be /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+ .debug_info    0x0000000000011062       0x23 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+ .debug_info    0x0000000000011085       0xf1 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(abort.o)
+ .debug_info    0x0000000000011176      0x1b5 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(assert.o)
+ .debug_info    0x000000000001132b     0x5221 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+ .debug_info    0x000000000001654c     0x1955 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+ .debug_info    0x0000000000017ea1      0x8af /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tcb.o)
+ .debug_info    0x0000000000018750      0x339 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(base64.o)
+ .debug_info    0x0000000000018a89     0x57c6 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+ .debug_info    0x000000000001e24f     0x20b9 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum_core.o)
+ .debug_info    0x0000000000020308     0x1084 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(constant_time.o)
+ .debug_info    0x000000000002138c      0x4c2 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
+ .debug_info    0x000000000002184e     0x2453 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+ .debug_info    0x0000000000023ca1      0x29f /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintf.o)
+ .debug_info    0x0000000000023f40       0xfb /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memmove.o)
+ .debug_info    0x000000000002403b       0xd3 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memset.o)
+ .debug_info    0x000000000002410e       0xb4 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strcmp.o)
+ .debug_info    0x00000000000241c2      0x123 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlcpy.o)
+ .debug_info    0x00000000000242e5      0x733 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
+ .debug_info    0x0000000000024a18      0x132 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+>>>>>>> 2e514d9d17 (PX-4)
 
 .debug_abbrev   0x0000000000000000     0x516e
  .debug_abbrev  0x0000000000000000      0x398 ./ta_mission.o
@@ -2169,6 +3002,7 @@ LOAD linker stubs
  .debug_abbrev  0x00000000000050ac       0xc2 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
 
 .debug_loclists
+<<<<<<< HEAD
                 0x0000000000000000    0x156da
  .debug_loclists
                 0x0000000000000000      0xb02 ./ta_mission.o
@@ -2232,6 +3066,71 @@ LOAD linker stubs
                 0x0000000000015368      0x2a7 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
  .debug_loclists
                 0x000000000001560f       0xcb /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+=======
+                0x0000000000000000    0x156b9
+ .debug_loclists
+                0x0000000000000000      0xae1 ./ta_mission.o
+ .debug_loclists
+                0x0000000000000ae1       0x94 ./user_ta_header.o
+ .debug_loclists
+                0x0000000000000b75      0x2a5 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(trace.o)
+ .debug_loclists
+                0x0000000000000e1a      0x2e5 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memcpy.o)
+ .debug_loclists
+                0x00000000000010ff     0x16b5 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintk.o)
+ .debug_loclists
+                0x00000000000027b4       0x65 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memchr.o)
+ .debug_loclists
+                0x0000000000002819       0x34 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlen.o)
+ .debug_loclists
+                0x000000000000284d       0xae /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(trace_ext.o)
+ .debug_loclists
+                0x00000000000028fb     0x115c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api.o)
+ .debug_loclists
+                0x0000000000003a57     0x1860 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_objects.o)
+ .debug_loclists
+                0x00000000000052b7     0x3c2c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+ .debug_loclists
+                0x0000000000008ee3      0x533 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_panic.o)
+ .debug_loclists
+                0x0000000000009416      0x330 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+ .debug_loclists
+                0x0000000000009746      0x614 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+ .debug_loclists
+                0x0000000000009d5a       0x71 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(assert.o)
+ .debug_loclists
+                0x0000000000009dcb     0x1f3e /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+ .debug_loclists
+                0x000000000000bd09      0xc1a /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+ .debug_loclists
+                0x000000000000c923      0x29d /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tcb.o)
+ .debug_loclists
+                0x000000000000cbc0      0x2e3 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(base64.o)
+ .debug_loclists
+                0x000000000000cea3     0x36a4 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+ .debug_loclists
+                0x0000000000010547     0x204a /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum_core.o)
+ .debug_loclists
+                0x0000000000012591      0xca5 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(constant_time.o)
+ .debug_loclists
+                0x0000000000013236      0x1d8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
+ .debug_loclists
+                0x000000000001340e     0x1b9b /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+ .debug_loclists
+                0x0000000000014fa9       0xd0 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintf.o)
+ .debug_loclists
+                0x0000000000015079      0x179 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memmove.o)
+ .debug_loclists
+                0x00000000000151f2       0x67 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memset.o)
+ .debug_loclists
+                0x0000000000015259       0x50 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strcmp.o)
+ .debug_loclists
+                0x00000000000152a9       0x9e /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlcpy.o)
+ .debug_loclists
+                0x0000000000015347      0x2a7 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
+ .debug_loclists
+                0x00000000000155ee       0xcb /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+>>>>>>> 2e514d9d17 (PX-4)
 
 .debug_aranges  0x0000000000000000      0x9e0
  .debug_aranges
@@ -2468,6 +3367,7 @@ LOAD linker stubs
  .debug_macro   0x000000000001a397       0x3f /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
  .debug_macro   0x000000000001a3d6      0x9c4 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
 
+<<<<<<< HEAD
 .debug_line     0x0000000000000000     0xf5f2
  .debug_line    0x0000000000000000      0x718 ./ta_mission.o
  .debug_line    0x0000000000000718      0x121 ./user_ta_header.o
@@ -2571,6 +3471,111 @@ LOAD linker stubs
  .debug_str     0x000000000001c893       0x64 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
                                        0xb506 (size before relaxing)
  .debug_str     0x000000000001c8f7       0x44 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+=======
+.debug_line     0x0000000000000000     0xf5e9
+ .debug_line    0x0000000000000000      0x70f ./ta_mission.o
+ .debug_line    0x000000000000070f      0x121 ./user_ta_header.o
+ .debug_line    0x0000000000000830       0xd3 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(stack_check.o)
+ .debug_line    0x0000000000000903      0x28c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(trace.o)
+ .debug_line    0x0000000000000b8f      0x148 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memcpy.o)
+ .debug_line    0x0000000000000cd7      0x801 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintk.o)
+ .debug_line    0x00000000000014d8       0xa8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memchr.o)
+ .debug_line    0x0000000000001580       0x9d /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlen.o)
+ .debug_line    0x000000000000161d      0x191 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(trace_ext.o)
+ .debug_line    0x00000000000017ae      0xd4d /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api.o)
+ .debug_line    0x00000000000024fb      0xff6 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_objects.o)
+ .debug_line    0x00000000000034f1     0x2528 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+ .debug_line    0x0000000000005a19      0x2b3 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_panic.o)
+ .debug_line    0x0000000000005ccc      0x292 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+ .debug_line    0x0000000000005f5e      0x7ce /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+ .debug_line    0x000000000000672c      0x50b /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+ .debug_line    0x0000000000006c37       0xf9 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(abort.o)
+ .debug_line    0x0000000000006d30      0x101 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(assert.o)
+ .debug_line    0x0000000000006e31     0x18f5 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+ .debug_line    0x0000000000008726      0x93c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+ .debug_line    0x0000000000009062      0x3aa /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tcb.o)
+ .debug_line    0x000000000000940c      0x326 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(base64.o)
+ .debug_line    0x0000000000009732     0x2f92 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+ .debug_line    0x000000000000c6c4      0xf15 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum_core.o)
+ .debug_line    0x000000000000d5d9      0xa48 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(constant_time.o)
+ .debug_line    0x000000000000e021      0x241 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
+ .debug_line    0x000000000000e262      0xca1 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+ .debug_line    0x000000000000ef03       0xd1 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintf.o)
+ .debug_line    0x000000000000efd4       0xd1 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memmove.o)
+ .debug_line    0x000000000000f0a5       0x9a /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memset.o)
+ .debug_line    0x000000000000f13f       0xa8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strcmp.o)
+ .debug_line    0x000000000000f1e7       0xef /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlcpy.o)
+ .debug_line    0x000000000000f2d6      0x1ea /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
+ .debug_line    0x000000000000f4c0      0x129 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+
+.debug_str      0x0000000000000000    0x1c92e
+ .debug_str     0x0000000000000000     0x9cd3 ./ta_mission.o
+                                       0x9fa8 (size before relaxing)
+ .debug_str     0x0000000000009cd3     0x15ad ./user_ta_header.o
+                                       0xafd1 (size before relaxing)
+ .debug_str     0x000000000000b280     0x1471 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(stack_check.o)
+                                       0xa54a (size before relaxing)
+ .debug_str     0x000000000000c6f1      0x15c /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(trace.o)
+                                       0x6b3a (size before relaxing)
+ .debug_str     0x000000000000c84d      0x392 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memcpy.o)
+                                       0x498f (size before relaxing)
+ .debug_str     0x000000000000cbdf      0x5a3 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintk.o)
+                                       0x5e9b (size before relaxing)
+ .debug_str     0x000000000000d182      0x115 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memchr.o)
+                                       0x4b76 (size before relaxing)
+ .debug_str     0x000000000000d297       0x58 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlen.o)
+                                       0x4b13 (size before relaxing)
+ .debug_str     0x000000000000d2ef       0x48 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(trace_ext.o)
+                                       0xaf93 (size before relaxing)
+ .debug_str     0x000000000000d337      0x69e /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api.o)
+                                       0xc57d (size before relaxing)
+ .debug_str     0x000000000000d9d5      0x831 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_objects.o)
+                                       0xb453 (size before relaxing)
+ .debug_str     0x000000000000e206     0x1966 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_operations.o)
+                                       0xd945 (size before relaxing)
+ .debug_str     0x000000000000fb6c      0x176 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_panic.o)
+                                       0xb2d0 (size before relaxing)
+ .debug_str     0x000000000000fce2      0x35e /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_system_pta.o)
+                                       0xba93 (size before relaxing)
+ .debug_str     0x0000000000010040     0x7829 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(user_ta_entry.o)
+                                      0x13957 (size before relaxing)
+ .debug_str     0x0000000000017869       0x68 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(utee_syscalls_a64.o)
+ .debug_str     0x00000000000178d1       0x2f /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(abort.o)
+                                       0xa91e (size before relaxing)
+ .debug_str     0x0000000000017900       0x26 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(assert.o)
+                                       0xad1c (size before relaxing)
+ .debug_str     0x0000000000017926     0x1467 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_arith_mpi.o)
+                                       0xdc22 (size before relaxing)
+ .debug_str     0x0000000000018d8d      0x4d8 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tee_api_property.o)
+                                       0xc515 (size before relaxing)
+ .debug_str     0x0000000000019265      0x247 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(tcb.o)
+                                      0x12e17 (size before relaxing)
+ .debug_str     0x00000000000194ac       0x40 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutee.a(base64.o)
+                                       0x4eae (size before relaxing)
+ .debug_str     0x00000000000194ec     0x2060 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum.o)
+                                       0xe32c (size before relaxing)
+ .debug_str     0x000000000001b54c      0x3f3 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(bignum_core.o)
+                                       0xd6a1 (size before relaxing)
+ .debug_str     0x000000000001b93f      0x5b2 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(constant_time.o)
+                                       0xd0b8 (size before relaxing)
+ .debug_str     0x000000000001bef1      0x1c1 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libmbedtls.a(platform_util.o)
+                                       0xc8ea (size before relaxing)
+ .debug_str     0x000000000001c0b2      0x5fe /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(bget_malloc.o)
+                                       0xbcf8 (size before relaxing)
+ .debug_str     0x000000000001c6b0       0x29 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(snprintf.o)
+                                       0x48d2 (size before relaxing)
+ .debug_str     0x000000000001c6d9      0x12a /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memmove.o)
+                                       0x4b74 (size before relaxing)
+ .debug_str     0x000000000001c803       0x2e /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(memset.o)
+                                       0x4929 (size before relaxing)
+ .debug_str     0x000000000001c831       0x2e /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strcmp.o)
+                                       0x4b13 (size before relaxing)
+ .debug_str     0x000000000001c85f       0x27 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(strlcpy.o)
+                                       0x51be (size before relaxing)
+ .debug_str     0x000000000001c886       0x64 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(mempool.o)
+                                       0xb506 (size before relaxing)
+ .debug_str     0x000000000001c8ea       0x44 /home/jetson/Linux_for_Tegra/source/optee/optee_os/out/arm-plat-tegra/export-ta_arm64/lib/libutils.a(consttime_memcmp.o)
+>>>>>>> 2e514d9d17 (PX-4)
                                        0x4921 (size before relaxing)
 
 .debug_line_str

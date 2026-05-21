@@ -168,7 +168,11 @@ void PositionChain::Run()
 	perf_begin(_optee_call_perf);
 
 	int rc = mission_client_chain_pos(
+<<<<<<< HEAD
 			pos.lat, pos.lon, pos.alt, pos.timestamp,
+=======
+			pos.lat, pos.lon, pos.alt,
+>>>>>>> 2e514d9d17 (PX-4)
 			record.chain_hash, &record.chain_seq);
 
 	perf_end(_optee_call_perf);
@@ -242,7 +246,11 @@ void PositionChain::run_perf_test(int iterations)
 		/* Vary lat each iteration so every hash differs */
 		double lat = 47.398 + i * 0.0001;
 		hrt_abstime t0 = hrt_absolute_time();
+<<<<<<< HEAD
 		mission_client_chain_pos(lat, 8.5455f, 20.0f, (uint64_t)t0, NULL, NULL);
+=======
+		mission_client_chain_pos(lat, 8.5455f, 20.0f, NULL, NULL);
+>>>>>>> 2e514d9d17 (PX-4)
 		times[i] = hrt_absolute_time() - t0;
 	}
 

@@ -144,6 +144,10 @@ set(msg_files
 	NavigatorMissionItem.msg
 	NavigatorStatus.msg
 	PositionHashChain.msg
+<<<<<<< HEAD
+=======
+	WpHashChain.msg
+>>>>>>> 2e514d9d17 (PX-4)
 	NeuralControl.msg
 	NormalizedUnsignedSetpoint.msg
 	ObstacleDistance.msg

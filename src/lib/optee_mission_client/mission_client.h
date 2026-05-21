@@ -139,6 +139,7 @@ int mission_client_verify_sig(const uint8_t *signature, const uint8_t *hash);
 /* ===== Hash Chain API ===== */
 
 /**
+<<<<<<< HEAD
  * Append one GPS position to the tamper-evident hash chain in secure world.
  *
  * Secure world computes:
@@ -155,6 +156,22 @@ int mission_client_verify_sig(const uint8_t *signature, const uint8_t *hash);
  */
 int mission_client_chain_pos(double lat, double lon, float alt,
 			     uint64_t timestamp_us,
+=======
+ * Append one waypoint position to the tamper-evident hash chain in secure world.
+ *
+ * Secure world computes:
+ *   new_hash = SHA256(prev_hash || lat || lon || alt)
+ * and stores new_hash in TA state.  Normal world receives the result.
+ *
+ * @param lat      Latitude in degrees
+ * @param lon      Longitude in degrees
+ * @param alt      Altitude in metres
+ * @param hash_out 32-byte output buffer for the new chain hash (may be NULL)
+ * @param seq_out  Output sequence number (may be NULL)
+ * @return MISSION_CLIENT_OK on success
+ */
+int mission_client_chain_pos(double lat, double lon, float alt,
+>>>>>>> 2e514d9d17 (PX-4)
 			     uint8_t hash_out[32], uint32_t *seq_out);
 
 /**

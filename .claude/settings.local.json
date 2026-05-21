@@ -16,7 +16,13 @@
       "Bash(ls /dev/tee* 2>/dev/null && echo \"TrustZone devices found\" || echo \"No /dev/tee* — OP-TEE not loaded\"; ps aux | grep tee-supplicant | grep -v grep || echo \"tee-supplicant not running\")",
       "Read(//dev/**)",
       "Bash(ls /lib/optee_armtz/ 2>/dev/null | head -10 || echo \"No TAs deployed yet\"; cat /home/jetson/PX4-Autopilot/optee_ta/mission_ta/CMakeLists.txt 2>/dev/null | head -20)",
+<<<<<<< HEAD
       "Read(//usr/lib/optee_armtz/**)"
+=======
+      "Read(//usr/lib/optee_armtz/**)",
+      "Bash(python3 Tools/waypoint_chain.py Tools/mc_mission_5wp.plan)",
+      "Bash(python3 -c \"import kconfiglib; print\\(kconfiglib.__file__\\)\")"
+>>>>>>> 2e514d9d17 (PX-4)
     ],
     "additionalDirectories": [
       "/home/jetson/PX4-Autopilot/build/px4_sitl_default/rootfs",

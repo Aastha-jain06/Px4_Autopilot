@@ -272,7 +272,10 @@ int mission_client_verify_sig(const uint8_t *signature, const uint8_t *hash)
 /* ===== Hash Chain API ===== */
 
 int mission_client_chain_pos(double lat, double lon, float alt,
+<<<<<<< HEAD
 			     uint64_t timestamp_us,
+=======
+>>>>>>> 2e514d9d17 (PX-4)
 			     uint8_t hash_out[32], uint32_t *seq_out)
 {
 	if (!g_initialized) {
@@ -280,10 +283,16 @@ int mission_client_chain_pos(double lat, double lon, float alt,
 	}
 
 	ta_chain_pos_t pos;
+<<<<<<< HEAD
 	pos.lat          = lat;
 	pos.lon          = lon;
 	pos.alt          = alt;
 	pos.timestamp_us = timestamp_us;
+=======
+	pos.lat = lat;
+	pos.lon = lon;
+	pos.alt = alt;
+>>>>>>> 2e514d9d17 (PX-4)
 
 	uint8_t new_hash[32] = {0};
 

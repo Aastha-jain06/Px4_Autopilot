@@ -34,11 +34,19 @@
 
 #define TA_MISSION_CMD_CHAIN_POS       6  /* Append a position to the hash chain */
 /* CMD_CHAIN_POS params:
+<<<<<<< HEAD
  *   [0] MEMREF_INPUT  — ta_chain_pos_t, 28 bytes (lat/lon/alt/timestamp)
  *   [1] MEMREF_OUTPUT — new chain hash, 32 bytes
  *   [2] VALUE_OUTPUT  — a = chain sequence number
  *   [3] NONE
  * Secure world computes: new_hash = SHA256(prev_hash || lat || lon || alt || timestamp)
+=======
+ *   [0] MEMREF_INPUT  — ta_chain_pos_t, 20 bytes (lat/lon/alt only)
+ *   [1] MEMREF_OUTPUT — new chain hash, 32 bytes
+ *   [2] VALUE_OUTPUT  — a = chain sequence number
+ *   [3] NONE
+ * Secure world computes: new_hash = SHA256(prev_hash || lat || lon || alt)
+>>>>>>> 2e514d9d17 (PX-4)
  * Stores new_hash in TA state. Returns new_hash + seq.
  */
 
@@ -55,11 +63,18 @@
 
 /* Position data sent from normal world for hash chaining */
 typedef struct {
+<<<<<<< HEAD
 	double   lat;           /* degrees */
 	double   lon;           /* degrees */
 	float    alt;           /* metres AMSL */
 	uint64_t timestamp_us;  /* PX4 system time in microseconds */
 } ta_chain_pos_t;           /* 28 bytes total */
+=======
+	double lat;   /* degrees */
+	double lon;   /* degrees */
+	float  alt;   /* metres above home */
+} ta_chain_pos_t;  /* 20 bytes: lat(8) + lon(8) + alt(4) */
+>>>>>>> 2e514d9d17 (PX-4)
 
 /* Maximum mission waypoints */
 #define TA_MISSION_MAX_ITEMS           500

@@ -394,13 +394,21 @@ static TEE_Result cmd_verify_sig(uint32_t param_types, TEE_Param params[4])
 /* ============================================================================
  * CMD_CHAIN_POS — append one position record to the tamper-evident hash chain
  *
+<<<<<<< HEAD
  * Hash step: new_hash = SHA256(prev_hash[32] || lat[8] || lon[8] || alt[4] || ts[8])
+=======
+ * Hash step: new_hash = SHA256(prev_hash[32] || lat[8] || lon[8] || alt[4])
+>>>>>>> 2e514d9d17 (PX-4)
  * All state lives in TrustZone. Normal world gets the new hash and seq number.
  * ============================================================================ */
 static TEE_Result cmd_chain_pos(uint32_t param_types, TEE_Param params[4])
 {
 	uint32_t exp = TEE_PARAM_TYPES(
+<<<<<<< HEAD
 		TEE_PARAM_TYPE_MEMREF_INPUT,   /* [0] ta_chain_pos_t (28 bytes) */
+=======
+		TEE_PARAM_TYPE_MEMREF_INPUT,   /* [0] ta_chain_pos_t (20 bytes) */
+>>>>>>> 2e514d9d17 (PX-4)
 		TEE_PARAM_TYPE_MEMREF_OUTPUT,  /* [1] new chain hash (32 bytes) */
 		TEE_PARAM_TYPE_VALUE_OUTPUT,   /* [2] .a = chain sequence number */
 		TEE_PARAM_TYPE_NONE);
@@ -420,6 +428,7 @@ static TEE_Result cmd_chain_pos(uint32_t param_types, TEE_Param params[4])
 
 	const ta_chain_pos_t *pos = (const ta_chain_pos_t *)params[0].memref.buffer;
 
+<<<<<<< HEAD
 	/* Build hash input: prev_hash(32) || lat(8) || lon(8) || alt(4) || timestamp(8) */
 	uint8_t input[60];
 	uint8_t *p = input;
@@ -428,6 +437,15 @@ static TEE_Result cmd_chain_pos(uint32_t param_types, TEE_Param params[4])
 	TEE_MemMove(p, &pos->lon, 8);          p += 8;
 	TEE_MemMove(p, &pos->alt, 4);          p += 4;
 	TEE_MemMove(p, &pos->timestamp_us, 8); p += 8;
+=======
+	/* Build hash input: prev_hash(32) || lat(8) || lon(8) || alt(4) = 52 bytes */
+	uint8_t input[52];
+	uint8_t *p = input;
+	TEE_MemMove(p, g_chain.hash, 32); p += 32;
+	TEE_MemMove(p, &pos->lat, 8);     p += 8;
+	TEE_MemMove(p, &pos->lon, 8);     p += 8;
+	TEE_MemMove(p, &pos->alt, 4);     p += 4;
+>>>>>>> 2e514d9d17 (PX-4)
 
 	/* SHA-256 entirely inside secure world */
 	TEE_OperationHandle hash_op = TEE_HANDLE_NULL;

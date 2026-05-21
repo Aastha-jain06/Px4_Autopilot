@@ -99,6 +99,10 @@ void LoggedTopics::add_default_topics()
 	add_topic("navigator_mission_item");
 	add_topic("navigator_status");
 	add_topic("position_hash_chain");
+<<<<<<< HEAD
+=======
+	add_topic("wp_hash_chain");
+>>>>>>> 2e514d9d17 (PX-4)
 	add_topic("offboard_control_mode", 100);
 	add_topic("onboard_computer_status", 10);
 	add_topic("parameter_update");
